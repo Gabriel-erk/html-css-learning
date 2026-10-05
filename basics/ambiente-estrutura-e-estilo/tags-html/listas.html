@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas</title>
+</head>
+
+<body>
+    <h2>Listas</h2>
+    <p>Lista ordenada</p>
+    <!-- ol == ordened list, listas ordenadas que são enumeradas automaticamente para nós -->
+    <!-- atributo type diz qual ordenação vai ser, por padrão vem númerica, mas podemos pedir para que seja em números romanos (minúsculos ou maiúsculos), ordem alfabética (a-z podendo escolher entre minúsculos e maiúsculos também) e o start define de onde aquela contagem vai começar, de exemplo, deixei para começar o primeiro número da minha lista ordenada, no 10 -->
+    <ol type="1" start="10">
+        <!-- li == list item, item de lista -->
+        <li>Colocar os ovos na batedeira</li>
+        <li>Colocar a farinha</li>
+        <li>Colocar o açucar</li>
+        <li>Colocar o leite</li>
+    </ol>
+
+    <p>Lista desordenada</p>
+    <!-- tipos: disc (tipo padrão), circle e square -->
+    <ul type="square">
+        <li>comprar café</li>
+        <li>comprar pão</li>
+        <li>comprar produtos de limpeza
+            <!-- listas dentro de listas (podendo ser ordenadas ou não) -->
+            <ol type="a">
+                <li>sabão</li>
+                <li>detergente</li>
+                <li>água sanitária</li>
+            </ol>
+        </li>
+    </ul>
+</body>
+
+</html>

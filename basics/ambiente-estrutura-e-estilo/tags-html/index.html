@@ -13,71 +13,16 @@
 </head>
 
 <body>
-    <!-- titulos, onde o h == heading, eles vão de 1 a 6 (h1 até h6), quanto maior for o número, menos importante ele será para a web, logo, o h6 é o menos importante e a web dará muito menos destaque para a informação contida nele -->
-    <!-- por padrão, tomar cuidado ao definir o h1 de uma página, ele é o mais importante dela e por boas práticas também, cada página tem apenas 1 h1 e caso seja necessário mais títulos, trabalhar com h2 para frente -->
-    <h1>Título Nível 1</h1>
-    <h2>Título Nível 2</h2>
-    <h3>Título Nível 3</h3>
-    <h4>Título Nível 4</h4>
-    <h5>Título Nível 5</h5>
-    <h6>Título Nível 6</h6>
-
-    <!-- intepretado pela web como um texto comum, não é dada muita importância para ele (assim com um h6 por exemplo, quando comparado a importância que um h1 recebe, o h6/p tem importâncias consideravelmente menores), apenas conteúdo mesmo -->
-    <!-- tag br faz uma quebra de linha entre o texto antes dele e o texto após (obs: não é uma forma profissional de quebrar linhas, o meio ideal é com o uso de css, utilizar o br é apenas uma grande gambiarra, por assim dizer) -->
-    <p>Esse é um parágrafo de texto em <br> HTML</p>
-    <p><strong>Esse é um texto em negrito</strong> utilizando uma tag semântica e recomendada para estes casos</p>
-    <p><em>Esse é um texto com ênfase (itálico),</em> usando uma tag semântica</p>
-    <!-- forma de colocar o número "acima", representando assim um número ao quadrado, ou ao cubo, utilizamos a tag sup para isso -->
-    <p>Minha casa tem 80m<sup>2</sup></p>
-    <!-- do mesmo jeito que acima, esse faz o inverso e coloca o caracter dentro da tag sub mais abaixo, assim como vemso em livros químicos, de ciências, algum caracter de uma formula específica -->
-    <p>a composição química da água é H<sub>2</sub>O</p>
-    <!-- hr == horizontal row, coloca uma linha preta na horizontal do nosso sistema, criando uma divisória útil para nós -->
-    <hr>
-
-    <!-- img == image -->
-    <!-- atributo src == source, que pergunta, de onde vem esta imagem? quando está na web, é chamado de caminho absoluto, já quando ela se encontra no nosso projeto, possui o nome de caminho relativo -->
-    <!-- alt == alternative, texto alternativo para auxiliar pessoas com deficiência, que descreve melhor a sua imagem OU caso dê algum erro no carregamento da imagem, será mostrado o texto deste atributo alt E também auxilia os bots do google surante as varreduras deles pela web-->
-    <!-- ao conseguir as imagens, colocar a de desktop aqui (maximo 1900 de largura) -->
-    <img src="" alt="">
-    <!-- tablet aqui (maximo 720 de largura) -->
-    <img src="" alt="">
-    <!-- celulares aqui (máximo 480 de largura) -->
-    <img src="" alt="">
-    <hr>
-
-    <h2>Listas</h2>
-    <p>Lista ordenada</p>
-    <!-- ol == ordened list, listas ordenadas que são enumeradas automaticamente para nós -->
-    <!-- atributo type diz qual ordenação vai ser, por padrão vem númerica, mas podemos pedir para que seja em números romanos (minúsculos ou maiúsculos), ordem alfabética (a-z podendo escolher entre minúsculos e maiúsculos também) e o start define de onde aquela contagem vai começar, de exemplo, deixei para começar o primeiro número da minha lista ordenada, no 10 -->
-    <ol type="1" start="10">
-        <!-- li == list item, item de lista -->
-        <li>Colocar os ovos na batedeira</li>
-        <li>Colocar a farinha</li>
-        <li>Colocar o açucar</li>
-        <li>Colocar o leite</li>
-    </ol>
-
-    <p>Lista desordenada</p>
-    <!-- tipos: disc (tipo padrão), circle e square -->
-    <ul type="square">
-        <li>comprar café</li>
-        <li>comprar pão</li>
-        <li>comprar produtos de limpeza
-            <!-- listas dentro de listas (podendo ser ordenadas ou não) -->
-            <ol type="a">
-                <li>sabão</li>
-                <li>detergente</li>
-                <li>água sanitária</li>
-            </ol>
-        </li>
+    <h1>Acesse o conteúdo das aulas, através dos links abaico</h1>
+    <ul>
+        <!-- como está dentro da nossa página, é um caminho relativo (caso estivesse fora, seria um caminho absoluto) -->
+        <!-- para abrir em uma nova aba, usamos o target="_blank" -->
+        <li><a href="titulos.html" target="_blank">Títulos</a></li>
+        <li><a href="paragrafos.html" target="_blank">Paragráfos</a></li>
+        <li><a href="imagens.html" target="_blank">Imagens</a></li>
+        <li><a href="listas.html" target="_blank">Listas</a></li>
+        <li></li>
     </ul>
-
-    <hr>
-    <h2>Links</h2>
-    <!-- link externo (que manda para forá do sistema) -->
-    <!-- através do atributo target, faremos que quando o usuário clicar em algum link em nosso sistema, o link seja aberto em outra aba, pois, estatísticas comprovam que, ao usuário clicar em um link em nosso sistema e nossa página ser substituída pela do link, eles geralmente não voltam (por isso a melhor abordagem é fazer com que nosso site fique em aberto e o sistema do link seja exibido em outra guia) -->
-    <!-- atributo rel == relationship (relação) que específica para o navegador e mecanismos de busca do google qual a RELAÇÃO deste nosso link (com a tag a) com o nosso sistema, aqui estamos dizendo com a palavra 'external' que ele é um link externo, isso não muda nada a respeito de funcionalidade e e visualmente, porém é melhor para mecanismos de busca, navegador...como citado acima -->
-    <a href="http://www.alura.com.br" target="_blank" rel="external">Acesse o site da alura</a>
 
     <hr>
     <!-- imagem para tablets -->
