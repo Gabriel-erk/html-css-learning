@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semântica</title>
+</head>
+
+<body>
+    <!-- todo conteúdo que pertencer ao cabeçalho do nosso sistema, ficará dentro da nossa tag header == tag semântica, ou seja, tag que COMUNICA algo para o navegador/mecanismos de busca, nesse caso, comunica que tudo dentro dela pertence ao CABEÇALHO da página-->
+    <header>
+        <!-- tag p == paragraph, que representa um paragráfo, porém, também é uma tag SEMÂNTICA pois também COMUNICA algo para o navegador/mecanismos de busca, ela passa um significado, ela dá um CONTEXTO para o conteúdo dentro dela, GRAÇAS a tag P, que é, nada mais e nada menos que: todo trecho dentro da tag p, é um paragráfo,  -->
+        <!-- usando &lt; (lower than == menor que '<') e &gt; (grower than == maior que '>') para exemplificar as tags de abertura (<) e fechamento (>), pois o vscode interpretaria o > ou < como abertura e fechamento de alguma tag e causaria certos problemas na nossa codificação, logo, seguimos os códigos da tabela ASCII para representar esse tipo de caracter que 'buga', pesquisando conseguimos encotrar outros códigos do tipo para usarmos em nossos sites -->
+        <!-- tag <code></code> é uma tag de formatação (formata o texto dentro dela, ou seja, causa alterações visuais na página html SOMENTE para o texto nela inserido) para deixar em uma estética de 'código' por assim dizer, para mostrar que o conteúdo da tag <code></code> representa um código-->
+        <p>Todo o conteúdo de cabeçalho do site, sempre ficará dentro da tag <code>&lt; header &gt;</code>.</p>
+        <!-- nav == navigation (navegação), tag semântica usada quando queremos indicar para o navegador uma 'seção' com vários links, ou seja, é uma parte do site que possui várias opções para o usuário escolher e literalmente, 'navegar' pelo sistema, logo, é de bom tom usarmos essa tag semântica para ESPECIFÍCARMOS o significado do nosso pedaço de código: varias opções de navegação pelo sistema obs:geralmente fica apenas dentro da nav mesmo, seguindo os padrões dos sites modernos, sempre após algum tipo de logo e tudo que for navegação/link no cabeçalho, ficará dentro desta tag ai -->
+        <nav>
+            <!-- usamos o '#' para dizer que não queremos que haja COMPORTAMENTO ao clicar nos links -->
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+        </nav>
+
+        <!-- tag semântica main, que diz pro navegador que, a partir daqui, tudo que vier, faz parte do conteúdo PRINCIPAL da nossa página, tudo relacionado a informação da página, estará envolto na tag MAIN -->
+        <!-- obs: não é uma boa prática inserir header e footer dentro da nossa tag main, pois geralmente são informações que ficarão repetidas entre as páginas do nosso site (no sentido de que, TODA página do nosso site terá o mesmo header, mesmo footer, por isso ela disse: 'informações repetidas' elas não fazem parte do conteúdo PRINCIPAL das nossas páginas, são informações BÁSICAS que TODAS as páginas terão)-->
+        <!-- obs2: mais uma vez, TODO conteúdo de informações PRINCIPAIS daquela página ficarão dentro da tag main (logo, se tenho uma página para mostrar o cardápio do meu sistema, todo conteúdo de cardápio ficará dentreo da minha tag MAIN e o restante, como por ex informações que se repetem em todas as páginas: header, footer, ficarão por fora do meu main) -->
+        <main>
+
+        </main>
+    </header>
+</body>
+
+</html>
