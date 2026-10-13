@@ -9,7 +9,9 @@
 
 <body>
     <!-- todo conteúdo que pertencer ao cabeçalho do nosso sistema, ficará dentro da nossa tag header == tag semântica, ou seja, tag que COMUNICA algo para o navegador/mecanismos de busca, nesse caso, comunica que tudo dentro dela pertence ao CABEÇALHO da página-->
+    <!-- aqui o navegador entende que o SIGNIFICADO do que está na dentro da tag header é um cabeçalho -->
     <header>
+        <h1>Semântica HTML</h1>
         <!-- tag p == paragraph, que representa um paragráfo, porém, também é uma tag SEMÂNTICA pois também COMUNICA algo para o navegador/mecanismos de busca, ela passa um significado, ela dá um CONTEXTO para o conteúdo dentro dela, GRAÇAS a tag P, que é, nada mais e nada menos que: todo trecho dentro da tag p, é um paragráfo,  -->
         <!-- usando &lt; (lower than == menor que '<') e &gt; (grower than == maior que '>') para exemplificar as tags de abertura (<) e fechamento (>), pois o vscode interpretaria o > ou < como abertura e fechamento de alguma tag e causaria certos problemas na nossa codificação, logo, seguimos os códigos da tabela ASCII para representar esse tipo de caracter que 'buga', pesquisando conseguimos encotrar outros códigos do tipo para usarmos em nossos sites -->
         <!-- tag <code></code> é uma tag de formatação (formata o texto dentro dela, ou seja, causa alterações visuais na página html SOMENTE para o texto nela inserido) para deixar em uma estética de 'código' por assim dizer, para mostrar que o conteúdo da tag <code></code> representa um código-->
@@ -20,14 +22,44 @@
             <a href="#">Link 1</a>
             <a href="#">Link 2</a>
         </nav>
-
-        <!-- tag semântica main, que diz pro navegador que, a partir daqui, tudo que vier, faz parte do conteúdo PRINCIPAL da nossa página, tudo relacionado a informação da página, estará envolto na tag MAIN -->
-        <!-- obs: não é uma boa prática inserir header e footer dentro da nossa tag main, pois geralmente são informações que ficarão repetidas entre as páginas do nosso site (no sentido de que, TODA página do nosso site terá o mesmo header, mesmo footer, por isso ela disse: 'informações repetidas' elas não fazem parte do conteúdo PRINCIPAL das nossas páginas, são informações BÁSICAS que TODAS as páginas terão)-->
-        <!-- obs2: mais uma vez, TODO conteúdo de informações PRINCIPAIS daquela página ficarão dentro da tag main (logo, se tenho uma página para mostrar o cardápio do meu sistema, todo conteúdo de cardápio ficará dentreo da minha tag MAIN e o restante, como por ex informações que se repetem em todas as páginas: header, footer, ficarão por fora do meu main) -->
-        <main>
-
-        </main>
     </header>
+
+    <!-- tag semântica main, que diz pro navegador que, a partir daqui, tudo que vier, faz parte do conteúdo PRINCIPAL da nossa página, tudo relacionado a informação da página, estará envolto na tag MAIN -->
+    <!-- obs: não é uma boa prática inserir header e footer dentro da nossa tag main, pois geralmente são informações que ficarão repetidas entre as páginas do nosso site (no sentido de que, TODA página do nosso site terá o mesmo header, mesmo footer, por isso ela disse: 'informações repetidas' elas não fazem parte do conteúdo PRINCIPAL das nossas páginas, são informações BÁSICAS que TODAS as páginas terão)-->
+    <!-- obs2: mais uma vez, TODO conteúdo de informações PRINCIPAIS daquela página ficarão dentro da tag main (logo, se tenho uma página para mostrar o cardápio do meu sistema, todo conteúdo de cardápio ficará dentreo da minha tag MAIN e o restante, como por ex informações que se repetem em todas as páginas: header, footer, ficarão por fora do meu main) -->
+    <!-- o navegador entende que o SIGNIFICADO do que está nessa tag main é o conteúdo principal do sistema -->
+    <main>
+        <!-- se sua página possui mais de um tópico a ser abordado, pode ser interessante ter mais de uma seção de conteúdo nele -->
+        <!-- aqui o navegador entende que o SIGNIFICADO do que escrevermos dentro da tag section é uma SEÇÃO de conteúdo, essa é a importância principal de usarmos as tags corretamente, para dar SIGNIFICADO as coisas que escrevemos ao navegador/mecanismos de busca e atingirmos as boas práticas de SEO/acessibilidade para que nosso sistema possa ser VISTO -->
+        <section>
+            <!-- por via de boas práticas, toda section, possui um título de algum nível (porém, também seguindo as boas práticas, geralmente não teriamos um h1, pois ele provavalemnte viria bem no começo do conteúdo principal (começo da tag main) OU no cabeçalho DESTA página) -->
+            <!-- tudo relacionado ao mesmo tema estará dentro da mesma section -->
+            <h2>Título da minha primeira seção</h2>
+            <p>texto de parágrafo</p>
+            <a href="#">link</a>
+        </section>
+
+        <!-- uma das muitas tags HTML não semânticas que uma hora ou outra precisaremos utilizar, principalmente com a finalidade de estilizar algo que, por alguma razão, não conseguimos fazer com uma tag semântica -->
+        <!-- a tag div informa pro navegador que está começando uma divisão de algo, ele só não sabe DO QUE, pois ela não é semântica, logo, não possui um SIGNIFICADO para o navegador entender, como a section por exemplo, que comunica que está começando uma SEÇÃO de conteúdo ali ou por exemplo a tag main, que diz que, dentro dela haverá o conteúdo PRINCIPAL da sua página html, a div é genérica, não semântica e logo, não comunica nada -->
+        <!-- dê preferências sempre ao uso de tags semânticas, mantenha-as tags não semânticas como a div abaixo, como última opção -->
+        <div>
+
+        </div>
+
+        <section>
+            <!-- criamos outra section pois estariamos TROCANDO de tema dentro da mesma página, se isso está acontecendo, seguindo as boas práticas, criamos uma outra tag section -->
+            <!-- como podemos ver abaixo, estamos repetindo a tag h2, pois podemos ter várias tags h2 no mesmo site, menos a h1, para nos adaptarmos melhor aos padrões do navegador/mecanismos de busca ao acessarem nosso site (óbvio, termos h2 colocados adequadamente, nessa seção de conteúdo aqui, colocar mais um h2 estaria quebrando a hierarquie e coerência do nosso sistema, pois, eu estaria abordando 2 tópicos? esse seria o pensamento do cliente, por isso, é importante deixar CLARO o assunto falado em cada seção e não dividir holofotes com outros titúlos, pois isso também é um PÉSSIMO hábito para o navegador, mecanismos de busca e SEO, se vai colocar um h2, dê preferência para colocá-lo em uma outra seção de conteúdo) -->
+            <h2>Título da minha segunda seção</h2>
+            <p>texto de parágrafo</p>
+            <a href="#">link</a>
+        </section>
+    </main>
+
+    <!-- a partir do momento que colocamos esta tag de footer, o navegador entenderá que ela está começando -->
+    <!-- geralmente informações extras sobre o sistema, logotipo, formas de contato...ficam nessa parte, traduzindo o nome da tag footer == rodapé, logo, é a última parte que o usuário do sistema irá ver -->
+    <footer>
+        <p>Meu contato: (11) 12345-1234</p>
+    </footer>
 </body>
 
 </html>
