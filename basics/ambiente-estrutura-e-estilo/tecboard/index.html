@@ -1,15 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- tag link usada para 'linkar' recursos externos ao nosso produto (sistema) ou arquivos que tenho em alguma pasta a configuração do nosso site (por isso estamos chamando-a na tag head, já que o que esta tag link está trazendo é um recurso de configuração do nosso sistema (produto)), onde aqui estaremos trazendo o recurso/ferramente chamada favicon para nos permitir acessar sua biblioteca de icones para que consigamos usa-los em nosso produto (sistema) ao nosso bel-prazer  -->
-     <!-- primeiro atributo (rel == relationship) diz: 'qual relação deste arquivo que você está trazendo? ou melhor que tipo de arquivo voce quer linkar nesta parte de configuração (tag head) do seu produto? ' -->
-    <link rel="stylesheet" href="">
+    <!-- primeiro atributo (rel == relationship) diz: 'qual relação deste arquivo que você está trazendo? ou melhor que tipo de arquivo voce quer linkar nesta parte de configuração (tag head) do seu produto?', onde passamos o valor 'icon' para mostrar que é uma relação de ícones que este arquivo que estamos trazendo tem para com nosso sistema -->
+    <!-- na informação do segundo atributo (href), estaremos informando a localização do arquivo (como é um ícone, salvamos com svg, lembrando também que, quanto melhor a escolha de nomes das imagens, melhor é para o SEO/mecanismos de busca do seu site) e essa imagem, esse ícone nosso ficará ao lado esquerdo do nosso title abaixo (Tecboard) -->
+    <!-- por questões de boas práticas, os favicons sempre ficam na pasta RAIZ, ou seja, no mesmo nível da nossa página principal (index.html), por exemplo -->
+    <!-- terceiro atributo, usado para garantir que o navegador entenderá o formato do nosso arquivo abaixo (favicon localizado na pasta raiz), onde passamos o valor: image/svg+xml, fazendo com que o navegador entenda e interprete que, nosso arquivo é um tipo (type, nome do atributo) imagem,svg + xml (utilizamos esse valor no type pois nossa imagem possui a extensão svg), obs: png seria  image/png -->
+    <link rel="icon" href="favicon-tecboard-roxo.svg" type="image/svg+xml">
     <!-- nome do nosso sistema, ou seja, é o nome do nosso produto -->
     <title>Tecboard</title>
 </head>
+
 <body>
-    
+    <!-- cabeçalho da minha página, que terá coisas que serão visíveis aos usuários, logo, se é visível, faz esta acoplado a segunda parte mais importante do arquivo html == corpo (body), onde tudo que é visível ao usuário, fica dentro do body, logo, a header é uma dessas coisas -->
+    <header>
+        <img src="img/logo-tecboard-branco.png" alt="Logo Tecboard na cor branca">
+    </header>
+    <!-- conteúdo principal, sempre dentro da tag main -->
+    <main>
+        <section>
+            <h1>Fique de olho no que importa</h1>
+            <p>Monitoramento em tempo real com alertas inteligentes para sua aplicação nunca sair do ar sem você saber.</p>
+            <a href="#">Testar sua versão demo</a>
+            <img src="img/celulares-sobrepostos-desktop.png" alt="Dois celulares pretos sobreposto com uma sombra roxa sob eles.">
+        </section>
+    </main>
 </body>
+
 </html>
