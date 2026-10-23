@@ -1,0 +1,6 @@
+/* removendo estilos que o navegador coloca por SI PRÓPRIO na nossa página (elementos HTML), quando usamos '*' significa que estamos aplicando estilos GLOBAIS == aplicando o que está dentro das chaves {} do nosso seletor '*' na PÁGINA toda, nome deste ato de remover estilos padrões do navegador: 'reset css'  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
