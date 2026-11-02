@@ -1,3 +1,8 @@
+/* 
+* objetivo do reset css é reduzir DIFERENÇAS entre os navegadores, deixar tudo 'igual/mais parecido possível', pois posso muito bem desenvolver meu site tomando como base a forma como ele está se comportando APENAS no chrome, porém, no microsoft edge ou firefox, podem ter configurações de estilo PADRÃO inseridas nele que eu não tomei conhecimento e por isso o meu site ter alguns problemas de estilização
+* por exemplo, me preparei para as configurações padrão do chrome, onde tenho que tirar o margin que ele coloca (por isso, na tag GLOBAL, usei margin: 0), porém o firefox coloca uma margem interna que, quando meu site for aberto lá, irá bugar tudo, coisa que pode acontecer com diversos navegadores, logo, o intuito deste reset é deixar todas as configurações que vem por padrão em navegadores equivalente
+*/
+
 
 /* Eric Meyer's CSS Reset v2.0 | 20110126 */
 
@@ -20,28 +25,35 @@ time, mark, audio, video {
     font-size: 100%;
     /* faz com que o elemento que tenha esta propriedade (font: inherit) possua TODAS as configurações de fonte do elemento (HTML) pai, logo, se eu tenho uma tag html chamada body e ela possui configurações de font-family, font-size e font-weight e eu possuir uma tag P dentro do body que tenha a propriedade font: inherit, todas as configurações de fonte do meu elemento HTML pai (body) virão para minha tag P  */
     font: inherit;
-    
+    /* define o alinhamento vertical (cima baixo, diferente de horizontal que é esquerda direita) pela linha de base (linha imaginária, onde o texto se apoia), quando aplicável (ou seja, não é em todos os casos que isso entra em vigor, funciona principalmente ele elemos inline, inline-block, em elementos puramente block como divs, dificilmente surtiria o efeito desejado */
     vertical-align: baseline;
 }
 
 /* Elementos HTML5 */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
+    /* quero que estes elementos HTML acima, tenham o display BLOCK, ou seja, quero que esses elementos ocupem uma linha INTEIRA de espaço, quando presentes, diferente do seu possível comportamento antigo (inline) onde ocupariam apenas o espaço do seu CONTEÚDO */
     display: block;
 }
 
 body {
+    /* aqui estamos definindo que a altura de linha dentro da tag body sera 1 == uma vez o tamanho da fonte, logo, se a fonte possui 16 px, o calculo do line-heigh é: tamanho fonte * valor da propriedade line-heigh, logo: line-heigh == 16px * 1 == 16px, caso o line-height fosse 1.5 e a fonte 16px seria algo como: 16px * 1.5 */
     line-height: 1;
 }
 
 ol, ul {
+    /* remove as bolinhas pretas das listas não ordenadas e os marcadores (números, letras...) da lista ordenada */
     list-style: none;
 }
 
+/* blockquote e q são dois elementos relacionados a CITAÇÕES, onde, blockquote é focado em representar uma citação em bloco e q para representar uma citação dentro de um texto (por exemplo, dentro de uma tag p) onde o navegador pode colocar aspas em volta do texto dentro da tag q */
 blockquote, q {
+    /* remove as aspas que uma tag do tipo citação (blockquote e q) podem ter por comportamento PADRÃO */
     quotes: none;
 }
 
+/* seletores blockquote:before,after e q:before,after == pseudoelementos, que permitem criar conteúdo VISUAL por meio do CSS sem necessariemente precisar colocar um elemento HTML */
+/* exemplo da explicaçõ acima, caso tenha um p::before (outra forma de escrever pseudoelementos, a forma abaixo é 'antiga') {content: "ícone de seta aqui "}, toda vez que eu usar uma tag p no meu HTML, com algum conteúdo, ANTES do conteúdo que eu inseri no HTML, graças O P::BEFORE, o texto que está no p::before será colocado ANTES (por isso before) do conteúdo da minha tag html, logo, "ícone de seta aqui restante do meu conteudo html" seria exibido no navegador */
 blockquote:before, blockquote:after,
 q:before, q:after {
     content: '';
