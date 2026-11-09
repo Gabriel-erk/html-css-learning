@@ -27,7 +27,11 @@
 <main>
     <!-- conteúdo de seção, tag semântica que conversa com o navegador e explica que o pedaço de código que a tag section ocupar é de uma SEÇÃO de conteúdo -->
     <section>
-        <h1>Fique de olho no que importa</h1>
+        <!-- br causa uma quebra de linha aqui, o texto antes do br (texto dentro do span), ficará em uma linha, e o RESTANTE do texto da tag atual (h1) ficará na linha abaixo -->
+        <h1>
+            <span>Fique de olho</span>
+            <br>no que importa
+        </h1>
         <p>Monitoramento em tempo real com alertas inteligentes para sua aplicação nunca sair do ar sem você saber.
         </p>
         <a href="#">Testar sua versão demo</a>

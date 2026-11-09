@@ -4,3 +4,17 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+body {
+    background-color: #0e1014;
+    color: #ffffff;
+}
+
+/* as estilizações abaixo serão aplicadas nas tags span que estiverem dentro de um h1 */
+h1 span {
+    color: #9747ff;
+}
+
+a {
+    color: #ffffff;
+}
