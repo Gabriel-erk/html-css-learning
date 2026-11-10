@@ -10,6 +10,12 @@ body {
     color: #ffffff;
 }
 
+h1 {
+    /* três valores aqui, que ditam uma hierarquia, da seleção de fontes, onde, estou dizendo, começe com a fonte Arial, caso não tenha esta fonte na máquina do usuário, use a fonte Helvetica e por fim, caso esta fonte também não esteja presenta na máquina dele, use a fonte sans-serif (assim, tudo terá o mesmo propósito, as fontes podem até serem diferentes, porém cumprirão o propósito por serem 'parecidas') */
+    /* existem fontes genéricas (que já vem instaladas na máquina do usuário) e outras que temos que trazer seus arquivos/links para que possamos usa-las, as fontes abaixo são genéricas, pois JÁ existem em nossa máquina */
+    /*font-family: Arial, Helvetica, sans-serif;*/
+}
+
 /* as estilizações abaixo serão aplicadas nas tags span que estiverem dentro de um h1 */
 h1 span {
     color: #9747ff;
