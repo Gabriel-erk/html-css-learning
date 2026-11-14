@@ -1,3 +1,19 @@
+/* utilizando tag font-face, como uma 'página de configurações' para as fontes que queremos acessar, aqui informamos a fonte que queremos importar (onde ela está) e outras configurações necessárias*/
+/* fizemos o download das nossas fontes por uma opção do site google fonts e através dos arquivos liberados por ele, conseguimos escolher 'qual tipo' da nossa fonte queriamos, aqui optamos pela fonte ubounded no peso 'Bold' */
+@font-face {
+    /* informando qual familia de fontes estamos usando */
+    font-family: "Unbounded";
+    /* informando ONDE está nosso arquivo de fonte no projeto */
+    src: url("../fonts/Unbounded-Bold.ttf");
+    /* o peso padrão dela (sabemos o peso do arquivo de fonte que pegamos através do site do google fonts, que disponibiliza essa informação para nós - especificando aqui em nosso font-face, faz com que essa configuração de font-weight seja aplicada no sistema inteiro, logo, não precisamos aplciar esta fonte em um h1 por exemplo e especificar o peso, por padrão será 700 (pois já especificamos ele aqui) */
+    font-weight: 700;
+    /* dizendo para o navegador que queremos que ele apresente o estilo da nossa fonte de forma normal (poderiamos usar italico e outras variações, porém, aqui, queremos o estilo de fonte (font-style), como normal */
+    font-style: normal;
+    /* diz pro navegador: se está fonte aqui estiver demorando muito para carregar, faça um fallback (ou seja, coloque OUTRA FONTE que o usuário possua em sua máquina ATÉ a nossa fonte-alvo (unbounded, que estamos configurando aqui neste font-face) esteja completamente carregada */
+    font-display: swap;
+}
+
+
 /* removendo estilos que o navegador coloca por SI PRÓPRIO na nossa página (elementos HTML), quando usamos '*' significa que estamos aplicando estilos GLOBAIS == aplicando o que está dentro das chaves {} do nosso seletor '*' na PÁGINA toda, nome deste ato de remover estilos padrões do navegador: 'reset css'  */
 * {
     margin: 0;
