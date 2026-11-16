@@ -10,6 +10,15 @@
     /* dizendo para o navegador que queremos que ele apresente o estilo da nossa fonte de forma normal (poderiamos usar italico e outras variações, porém, aqui, queremos o estilo de fonte (font-style), como normal */
     font-style: normal;
     /* diz pro navegador: se está fonte aqui estiver demorando muito para carregar, faça um fallback (ou seja, coloque OUTRA FONTE que o usuário possua em sua máquina ATÉ a nossa fonte-alvo (unbounded, que estamos configurando aqui neste font-face) esteja completamente carregada */
+    /* a fonte que será usada como fallback está configurada na CHAMADA desta família de fonte aqui, então, se estou aplicando esta fonte aqui no meu h1, seria: fonte-alvo, fonte fallback h1 { font-family: 'Poppins', sans-serif }*/
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
     font-display: swap;
 }
 
@@ -27,12 +36,13 @@ body {
 }
 
 h1 {
+    /* usando este valor, pois é como está em nosso layout (figma)*/
+    font-size: 85px;
     /* três valores aqui, que ditam uma hierarquia, da seleção de fontes, onde, estou dizendo, começe com a fonte Arial, caso não tenha esta fonte na máquina do usuário, use a fonte Helvetica e por fim, caso esta fonte também não esteja presenta na máquina dele, use a fonte sans-serif (assim, tudo terá o mesmo propósito, as fontes podem até serem diferentes, porém cumprirão o propósito por serem 'parecidas') */
     /* existem fontes genéricas (que já vem instaladas na máquina do usuário) e outras que temos que trazer seus arquivos/links para que possamos usa-las, as fontes abaixo são genéricas, pois JÁ existem em nossa máquina */
     /* font-family: Arial, Helvetica, sans-serif;*/
     /* definindo a fonte das nossas tags html, como 'Unbounded' e, caso a fonte Unbounded não esteja presente na máquina do usuário, usará a fonte APÓS a vírgula, no caso, sans-serif */
     font-family: "Unbouded", sans-serif;
-    font-weight: bold;
 }
 
 /* as estilizações abaixo serão aplicadas nas tags span que estiverem dentro de um h1 */
@@ -42,9 +52,15 @@ h1 span {
 
 p {
     font-family: "Poppins", sans-serif;
-    font-weight: 500;
+    /* pela mesma razão da escolha de tamanho de fonte do h1 acima, foi definido pelo nosso designer um tamanho usando o tipo de medida chamado 'pt' para nossos parágrafos e títulos que, convertendo, conseguimos a medida de 32px */
+    font-size: 32px;
 }
 
 a {
     color: #ffffff;
+    /* pela mesma razão da escolha de tamanho de fonte do h1 acima, foi definido pelo nosso designer um tamanho usando o tipo de medida chamado 'pt' para nossos parágrafos, links e títulos que, convertendo, conseguimos a medida de 32px */
+    font-size: 32px;
+    /* removendo o sublinhado abaixo da nossa tag html 'a' */
+    /* poderiamos adicionar outras decorações de texto caso fosse do nosso desejo, como por exemplo uma linha cortando o MEIO do nosso texto (para ter acesso a isso, dar uma pesquisada nas opções disponíveis) */
+    text-decoration: none;
 }
