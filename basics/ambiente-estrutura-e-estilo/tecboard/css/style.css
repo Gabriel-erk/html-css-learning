@@ -4,7 +4,7 @@
     /* informando qual familia de fontes estamos usando */
     font-family: "Unbounded";
     /* informando ONDE está nosso arquivo de fonte no projeto */
-    src: url("../fonts/Unbounded-Bold.ttf");
+    src: url("../fonts/Unbounded-Bold.ttf") format("truetype");
     /* o peso padrão dela (sabemos o peso do arquivo de fonte que pegamos através do site do google fonts, que disponibiliza essa informação para nós - especificando aqui em nosso font-face, faz com que essa configuração de font-weight seja aplicada no sistema inteiro, logo, não precisamos aplciar esta fonte em um h1 por exemplo e especificar o peso, por padrão será 700 (pois já especificamos ele aqui) */
     font-weight: 700;
     /* dizendo para o navegador que queremos que ele apresente o estilo da nossa fonte de forma normal (poderiamos usar italico e outras variações, porém, aqui, queremos o estilo de fonte (font-style), como normal */
@@ -16,7 +16,7 @@
 
 @font-face {
     font-family: "Poppins";
-    src: url("../fonts/Poppins-Regular.ttf");
+    src: url("../fonts/Poppins-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -35,14 +35,26 @@ body {
     color: #ffffff;
 }
 
+/* atingindo a imagem dentro da tag header, vulgo, img */
+header img {
+    display: block;
+    /* definindo largura */
+    width: 210px;
+    /* definindo altura */
+    height: 34px;
+    margin: 75px 0 0 360px;
+}
+
 h1 {
     /* usando este valor, pois é como está em nosso layout (figma)*/
-    font-size: 85px;
+    font-size: 64px;
     /* três valores aqui, que ditam uma hierarquia, da seleção de fontes, onde, estou dizendo, começe com a fonte Arial, caso não tenha esta fonte na máquina do usuário, use a fonte Helvetica e por fim, caso esta fonte também não esteja presenta na máquina dele, use a fonte sans-serif (assim, tudo terá o mesmo propósito, as fontes podem até serem diferentes, porém cumprirão o propósito por serem 'parecidas') */
     /* existem fontes genéricas (que já vem instaladas na máquina do usuário) e outras que temos que trazer seus arquivos/links para que possamos usa-las, as fontes abaixo são genéricas, pois JÁ existem em nossa máquina */
     /* font-family: Arial, Helvetica, sans-serif;*/
     /* definindo a fonte das nossas tags html, como 'Unbounded' e, caso a fonte Unbounded não esteja presente na máquina do usuário, usará a fonte APÓS a vírgula, no caso, sans-serif */
     font-family: "Unbouded", sans-serif;
+    text-align: center;
+    margin-top: 60px;
 }
 
 /* as estilizações abaixo serão aplicadas nas tags span que estiverem dentro de um h1 */
@@ -52,15 +64,43 @@ h1 span {
 
 p {
     font-family: "Poppins", sans-serif;
+    text-align: center;
     /* pela mesma razão da escolha de tamanho de fonte do h1 acima, foi definido pelo nosso designer um tamanho usando o tipo de medida chamado 'pt' para nossos parágrafos e títulos que, convertendo, conseguimos a medida de 32px */
-    font-size: 32px;
+    font-size: 24px;
+    margin-top: 24px;
 }
 
 a {
     color: #ffffff;
     /* pela mesma razão da escolha de tamanho de fonte do h1 acima, foi definido pelo nosso designer um tamanho usando o tipo de medida chamado 'pt' para nossos parágrafos, links e títulos que, convertendo, conseguimos a medida de 32px */
-    font-size: 32px;
+    font-size: 24px;
     /* removendo o sublinhado abaixo da nossa tag html 'a' */
     /* poderiamos adicionar outras decorações de texto caso fosse do nosso desejo, como por exemplo uma linha cortando o MEIO do nosso texto (para ter acesso a isso, dar uma pesquisada nas opções disponíveis) */
     text-decoration: none;
+    background-color: #9747ff;
+    /* em caso de apenas essas duas instruções serem passadas, o código não terá o comportamento esperado, essas duas medidas não serão aplicadas (sua altura e largura não serão modificadas) pois o elemento em questão (tag a, que estamos manipulando neste exato momento) é do tipo inline, logo, ela ocupará, em tela, apenas o espaço NECESSÁRIO para seu conteúdo ser exibido (então sua altura e largura dependem mais do conteúdo da tag == texto que estiver entre sua abertura e fechamento, do que as medidas que impusermos a ela) para que este comportamento seja alterado, podemos aplicar a propriedade: display: inline-block, para permitir que ele tenha todas as características de um elemento inline (permitir elementos ao seu lado == não ocupar o espaço inteiro da linha) E ainda possa ter seu sua altura (height) e largura (width) alterados ao nosso bel-prazer (comportamento do tipo block) */
+    width: 340px;
+    height: 66px;
+    /* transformando o tipo do elemento para block (ele por padrão é inline e não permite manipular altura e largura, porém desta forma abaixo é possível)*/
+    display: block;
+    /* forma de centralizar o botão (sem padding, utilizando padding nós poderiamos REMOVER a definição de altura e largura, pois quando manipulamos padding + height and width os valores se somam e ficam todos esquisitos, perdendo a proporção que gostariamos */
+    /* text-align, para deixarmos o texto no centro do elemento (horizontal) */
+    text-align: center;
+    /* line-height == altura de linha em 66px para dizer q a altura de linha do nosso TEXTO é de 66px que é IGUAL a altura do elemento (height: 66px), comportamento que provoca a centralização do conteúdo no MEIO do elemento (verticalmente)*/
+    line-height: 66px;
+    border-radius: 36px;
+    /* dizendo que embaixo (bottom) e em cima (top) é uma margem de 40px e nas laterais, de forma automática, ou seja, o cálculo é feito sozinho, o que acaba CENTRALIZANDO este elemento (a) no meio da nossa tela */
+    /* obs: caso não seja da forma abaixo, sempre passamos os valores do margin em sentindo horário, logo: top, right, bottom, left, então: margin: 10px 20px 30px 40px */
+    margin: 40px auto;
+}
+
+section img {
+    /* display block, principalmente para que eu consiga realizar a manipulação de tamanho e altura do elemento selecionado (img) */
+    display: block;
+    /* definindo largura e altura */
+    /* foi descoberto isso abrindo a imagem aqui na IDE mesmo, onde me entregou os valores: 792x446 (o primeiro valor é SEMPRE a largura)*/
+    width: 792px;
+    height: 446px;
+    /* 0px em cima (top) e embaixo (bottom), pois o elemento acima dessa img aqui já está criando uma margem entre eles (40px e o elemento em questão é o botão == a) */
+    margin: 0 auto;
 }
