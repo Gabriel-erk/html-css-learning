@@ -1,3 +1,6 @@
+/*
+* definição de fontes
+*/
 /* utilizando tag font-face, como uma 'página de configurações' para as fontes que queremos acessar, aqui informamos a fonte que queremos importar (onde ela está) e outras configurações necessárias*/
 /* fizemos o download das nossas fontes por uma opção do site google fonts e através dos arquivos liberados por ele, conseguimos escolher 'qual tipo' da nossa fonte queriamos, aqui optamos pela fonte ubounded no peso 'Bold' */
 @font-face {
@@ -23,6 +26,7 @@
 }
 
 
+/* Reset css */
 /* removendo estilos que o navegador coloca por SI PRÓPRIO na nossa página (elementos HTML), quando usamos '*' significa que estamos aplicando estilos GLOBAIS == aplicando o que está dentro das chaves {} do nosso seletor '*' na PÁGINA toda, nome deste ato de remover estilos padrões do navegador: 'reset css'  */
 * {
     margin: 0;
@@ -30,6 +34,7 @@
     box-sizing: border-box;
 }
 
+/* Estilo Desktop */
 body {
     background-color: #0e1014;
     color: #ffffff;
@@ -64,10 +69,13 @@ h1 span {
 
 p {
     font-family: "Poppins", sans-serif;
-    text-align: center;
     /* pela mesma razão da escolha de tamanho de fonte do h1 acima, foi definido pelo nosso designer um tamanho usando o tipo de medida chamado 'pt' para nossos parágrafos e títulos que, convertendo, conseguimos a medida de 32px */
     font-size: 24px;
-    margin-top: 24px;
+    /* assim, definimos uma largura para um elemento do tipo block, que por padrão, ocupa a LINHA inteira do navegador em que ele está presente, logo, eu poderia usar a propriedade 'text-align: center' normalmente que centralizaria o meu conteúdo (o conteúdo, não o elemento, aqui estamos definindo o tamanho do elemento como só isso, logo, ele não vai ocupar a linha inteira, o conteúdo pode continuar centralizado dentro do elemento, porém, ao alterar o tamanho do elemento em si, a tag p deixa de estar no formato que desejo (centralizada)) corretamente no meio, porém, definindo uma largura fixa, este comportamento se perde e por isso, centralizaremos o elemento usando o margin: auto, onde o valor 'auto' calculará automaticamente os lados (caso presente na posição, seguindo sentido horário dos lados)  */
+    /* definimos um valor fixo para o nosso elemento p seguindo o figma para trabalhar a questão da responsividade (em desktops, segundo nosso figma, essa é a medida para o elemento que contém o texto do p que estamos atingindo agora, para tablets e desktops será outra)*/
+    width: 792px;
+    /* sintaxe da forma abaixo diz: quero 24px em cima, calcule automaticamente os lados e quero 0 embaixo*/
+    margin: 24px auto 0;
 }
 
 a {
@@ -94,6 +102,12 @@ a {
     margin: 40px auto;
 }
 
+/* pseudo-elementos == acessar estados de um elemento css, ex: hover, é um ESTADO de um elemento html, sintaxe de acesso a pseudo-elemento == elementoHtml:estadoQueDesejaAcessar */
+
+a:hover {
+    color: #8233e8;
+}
+
 section img {
     /* display block, principalmente para que eu consiga realizar a manipulação de tamanho e altura do elemento selecionado (img) */
     display: block;
@@ -103,4 +117,43 @@ section img {
     height: 446px;
     /* 0px em cima (top) e embaixo (bottom), pois o elemento acima dessa img aqui já está criando uma margem entre eles (40px e o elemento em questão é o botão == a) */
     margin: 0 auto;
+}
+
+/* dizendo ao navegador que quando a tela chegar a 768px, que execute todas as linhas de estilo presentes dentro das minhas chaves */
+/* logo, se a largura máxima é até 768, as configurações abaixo serão aplicadas a telas menores ou iguais a isso (telas de tablets)*/
+@media (max-width: 768px) {
+    header img {
+        margin: 65px 0 0 60px;
+    }
+
+    p {
+        width: 648px;
+    }
+}
+
+/* largura máxima da tela tem que ser 375px para as configurações dentro das chaves desse @media serem aplicadas */
+/* telas de celulares aqui */
+@media (min-width: 375px) {
+    header img {
+        margin: 32px 0 0 16px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 20px;
+        width: 340px;
+    }
+
+    a {
+        font-size: 20px;
+        width: 251px;
+    }
+
+    section img {
+        width: 341px;
+        height: 230px;
+    }
 }
