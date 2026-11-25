@@ -8,12 +8,31 @@
 </head>
 <!-- body, onde todas as informações aqui presentes, serão vistas pelo usuário-->
 <body>
-    <!-- cabeçalho da página -->
-    <header>
-        <h1>Pesquisa Online</h1>
-    </header>
-    <main>
-        <section></section>
-    </main>
+<!-- cabeçalho da página -->
+<header>
+    <h1>Pesquisa Online</h1>
+</header>
+<main>
+    <section>
+        <!-- sintaxe padrão de quando se usa a tag form: campo (input, textarea...) e botão de enviar (button type submit)-->
+        <!-- atributo da tag html form 'action' recebe uma URL como valor, que é o destino para onde os dados preenchidos no formulário abaixo serão enviados (ex laravel: enviarei para uma URL que irá disparar o método store do meu controller  -->
+        <!-- método de envio GET, pega os dados do formulário e os insere na URL, então, por exemplo, caso o formulário abaixo tenha um input com o atributo 'name' com o valor de 'email', ao preencher este input com um valor e clicar em submit, este 'name' (==email) juntamente do valor alocado no campo vai parar na URL do site-->
+        <!-- método de envio POST é enviado em formato de cabeçalho/array associativo e não fica exposto na URL-->
+        <form action="" method="get">
+            <!-- criamos um 'label', elemento HTML responsável por adicionar um texto próximo da nossa tag input abaixo (tanto ao lado, ou acima) onde o atributo for é para representar a qual input html este mesmo label pertence (neste caso aqui, pertence ao input html com o atributo name preenchido com 'userName' (pois usamos o mesmo valor do atributo 'name' do input html que queremos que o label pertença)-->
+            <label for="userName">Nome:</label>
+            <!-- atributo 'name' indica QUEM é este campo que estamos manipulando, é algo parecido com um 'id', poderemos localizar este input/saber de onde recebemos alguma informação por conta do valor deste atributo 'name' obs: sempre com nomes em inglês -->
+            <input type="text" name="userName">
+
+            <!-- forma resumida de utilizar o label + input, da maneira abaixo, envolvendo o input entre as tags do label, o for='nameDaSuaTagAqui' (como descrito no exemplo do input acima) é omitido, obs: nos dois exemplos aqui de label + for, ambos possuem um comportamento em comum: ao clicar no texto do label, o campo input recebe o foco -->
+            <label>
+                Idade:
+                <input type="number" name="age">
+            </label>
+            <!-- neste button aplicamos o type submit, pois ele vai ENVIAR alguma coisa (neste caso, enviará as informações dos campos do formulário em que estamos agora-->
+            <button type="submit"></button>
+        </form>
+    </section>
+</main>
 </body>
 </html>
