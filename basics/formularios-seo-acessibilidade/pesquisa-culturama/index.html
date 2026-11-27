@@ -22,6 +22,7 @@
             <!-- semântica com formulários (semântica == quando queremos DIZER alguma coisa, quando queremos comunicar algo para o navegador e os mecanismos de buscas relacionados ao mesmo, e aqui, explicarei sobre o que a tag semântica fieldset faz)-->
             <!-- fieldset diz para o navegador que dentro da abertura e fechamento da suas tags estará começando um CONJUNTO de elementos/conjunto sobre determinado assunto que começara na ABERTURA dessa tag html semântica chamada fieldset, que quer dizer: esses inputs um abaixo do outro (conjunto) dentro de fieldset possuem RELAÇÃO SEMÂNTICA (relação de SIGNIFICADO, ou seja, o significado de cada campo aqui está conectado com o outro campo, pois todos eles pertencem a uma única Entidade/Model (Usuário))  -->
             <!-- obs: gerará uma 'borda' em volta dos inputs dentro deste fieldset -->
+            <!-- obs: aqui criamos uma 'seção' de campos input e foi envolvida dentro do fieldset todos os inputs que fazem parte deste mesmo grupo (Dados Pessoais), para saber a qual grupo estes inputs pertencem, é só olhar o conteúdo da tag html legend (que diz que este grupo de conteúdo/inputs dentro da tag fieldset que o legend com o texto 'Dados Pessoais' está pertence a 'Dados pessoais'-->
             <!-- tag button fica de fora, pois não possui relação semântica com os inputs -->
             <fieldset>
                 <!-- tag que age como uma espécie de legenda (traduzindo legend do inglês), onde a sua principal funcionalidade é dar uma descrição GERAL do conjunto de conteúdo semântico presente no fieldset atual-->
@@ -31,33 +32,45 @@
                 <label for="userName">Nome:</label>
                 <!-- atributo 'name' indica QUEM é este campo que estamos manipulando, é algo parecido com um 'id', poderemos localizar este input/saber de onde recebemos alguma informação por conta do valor deste atributo 'name' obs: sempre com nomes em inglês -->
                 <input type="text" name="userName" required>
-
+                <br>
                 <!-- forma resumida de utilizar o label + input, da maneira abaixo, envolvendo o input entre as tags do label, o for='nameDaSuaTagAqui' (como descrito no exemplo do input acima) é omitido, obs: nos dois exemplos aqui de label + for, ambos possuem um comportamento em comum: ao clicar no texto do label, o campo input recebe o foco -->
                 <label>
                     Idade:
                     <!-- informando que os valores mínimos e máximos deste input com nome de 'age' e permitindo apenas valores númericos pode ter é 12 e 100-->
                     <input type="number" name="userAge" min="12" max="100" required>
                 </label>
-
+                <br>
                 <label>
                     Birth Date:
                     <input type="date" name="birthDate">
                 </label>
-
+                <br>
                 <label>
                     Email:
                     <input type="email" name="userEmail" required>
                 </label>
-
+                <br>
                 <label>
                     <!-- tipo tel específico para telefone, atributo name do input já está associado ao label pelo fato do input estar dentro da abertura e fechamento do label e atributo novo (pattern == padrão) está indicando 2 coisas, onde a primeira é que só podemos utilizar numéros entre 0-9 (com [0-9]) e que o número máximo de caracteres permitido neste campo é 11 (em {11})-->
                     <input type="tel" name="userPhoneNumber" pattern="[0-9]{14}" placeholder="(11) 11111-1111">
                 </label>
-
+                <br>
                 <label>
                     Upload de foto
                     <!-- criando um input do tipo file (arquivo) e para definir o tipo de arquivo que é permitido enviar, usamos o atributo accept e colocamos o valor image e logo em seguida /* para indicar que é permitido QUALQUER tipo de imagem (.png .jpg, etc.)-->
                     <input type="file" accept="image/*" name="userImage">
+                </label>
+            </fieldset>
+
+            <!-- iniciando outro grupo de inputs, porém os inputs presentes dentro do fieldset abaixo pertencem ao grupo de inputs (campos nomeados que receberão informações digitadas pelo usuário) chamado 'Perfil', como a tag semântica html legend descreve abaixo -->
+            <fieldset>
+                <legend>Perfil</legend>
+
+                <!-- texto ficando APÓS o input agora, pois o formato de exibição desejado agora é: input (bolinha de seleção que o tipo RADIO nos entrega) e depois o texto-->
+                <!-- tag value permite que seja atribuito um VALOR diretamente à aquele campo, logo, quando for acionado o botão do tipo submit deste formulário e o input abaixo do tipo radio estiver SELECIONADO, o valor que será passado para o backend/URL será: userGender = Feminino, caso tenha ouro valor, será passado o outro valor (userGender pois é o name deste input abaixo -->
+                <label>
+                    <input type="radio" name="userGender" value="Feminino">
+                    Feminino
                 </label>
             </fieldset>
             <!-- neste button aplicamos o type submit, pois ele vai ENVIAR alguma coisa (neste caso, enviará as informações dos campos do formulário em que estamos agora-->
